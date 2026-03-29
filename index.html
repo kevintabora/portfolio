@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kevin Tabora</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="KT icon.png" />
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark: #2c2c2c;
+      --darker: #1e1e1e;
+      --white: #fafafa;
+      --off-white: rgba(255,255,255,0.55);
+      --mid: #888888;
+      --rule: #e0e0e0;
+      --fs-xs: 0.72rem;
+      --fs-sm: 0.875rem;
+      --fs-base: 1rem;
+      --fs-lg: 1.5rem;
+      --fs-2xl: 3.5rem;
+      --font: 'Proxima Nova', 'proxima-nova', 'Nunito Sans', 'Gill Sans MT', 'Gill Sans', sans-serif;
+      --tracking-wide: 0.12em;
+      --tracking-wider: 0.2em;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--white);
+      color: var(--dark);
+      font-size: var(--fs-base);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ═══════════════════════════════
+       SECTION 1 — PROFILE (full viewport, dark)
+    ════════════════════════════════ */
+    .section-profile {
+      background: var(--darker);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .profile-inner {
+      max-width: 645px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem;
+      animation: fadeUp 0.9s ease both;
+    }
+
+    .header-top {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .headshot-wrap {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,0.25);
+      flex-shrink: 0;
+    }
+    .headshot-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .headshot-wrap:hover img { transform: scale(1.05); }
+
+    .header-name-block { display: flex; flex-direction: column; gap: 0.3rem; }
+
+    .label {
+      font-size: var(--fs-xs);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--off-white);
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, var(--fs-2xl));
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.0;
+      color: var(--white);
+    }
+
+    .subtitle {
+      font-size: var(--fs-xs);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      color: var(--off-white);
+      margin-top: 0.2rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      margin-bottom: 1.75rem;
+      flex-wrap: wrap;
+    }
+    .contact-row a {
+      font-size: var(--fs-xs);
+      letter-spacing: 0.05em;
+      color: var(--off-white);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.25s, border-color 0.25s;
+    }
+    .contact-row a:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
+    .contact-sep {
+      width: 1px;
+      height: 12px;
+      background: rgba(255,255,255,0.2);
+      flex-shrink: 0;
+    }
+
+    .bio {
+      font-size: var(--fs-base);
+      color: rgba(255,255,255,0.72);
+      max-width: 640px;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    /* Button row */
+    .btn-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Download Resume — white button */
+    .cta-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--darker);
+      background: var(--white);
+      padding: 0.75rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.35s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .cta-download::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #444444;
+      transform: translateX(-101%);
+      transition: transform 0.35s cubic-bezier(0.77,0,0.18,1);
+    }
+    .cta-download:hover { color: var(--white); }
+    .cta-download:hover::before { transform: translateX(0); }
+    .cta-download span { position: relative; z-index: 1; }
+    .cta-download svg { position: relative; z-index: 1; }
+
+    /* See Selected Works — ghost/outline button */
+    .cta-works {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white);
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      padding: 0.75rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.35s ease, border-color 0.35s ease;
+      cursor: pointer;
+    }
+    .cta-works::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.1);
+      transform: translateX(-101%);
+      transition: transform 0.35s cubic-bezier(0.77,0,0.18,1);
+    }
+    .cta-works:hover { border-color: rgba(255,255,255,0.7); }
+    .cta-works:hover::before { transform: translateX(0); }
+    .cta-works span { position: relative; z-index: 1; }
+    .cta-works svg { position: relative; z-index: 1; }
+
+    /* ═══════════════════════════════
+       SECTION 2 — SELECTED WORKS (light)
+    ════════════════════════════════ */
+    .section-works {
+      background: var(--white);
+    }
+
+    /* Sticky top nav bar for works section */
+    .works-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 250, 250, 0.65);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid rgba(224, 224, 224, 0.5);
+      padding: 1rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 100%;
+    }
+    .works-nav-label {
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    /* View Profile — small ghost button in nav */
+    .cta-profile {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--dark);
+      background: transparent;
+      border: 1.5px solid var(--rule);
+      padding: 0.5rem 1.1rem;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.35s ease, border-color 0.3s ease;
+      cursor: pointer;
+    }
+    .cta-profile::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--darker);
+      transform: translateX(-101%);
+      transition: transform 0.35s cubic-bezier(0.77,0,0.18,1);
+    }
+    .cta-profile:hover { color: var(--white); border-color: var(--darker); }
+    .cta-profile:hover::before { transform: translateX(0); }
+    .cta-profile span { position: relative; z-index: 1; }
+    .cta-profile svg { position: relative; z-index: 1; }
+
+    .projects-wrap {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 0 2.5rem 5rem;
+    }
+
+    .section-heading {
+      padding-top: 3.5rem;
+      margin-bottom: 2rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .section-heading.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section-heading h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      color: var(--dark);
+      display: inline-block;
+    }
+    .section-heading h2::after {
+      content: '';
+      display: block;
+      margin-top: 0.55rem;
+      height: 3px;
+      width: 2.5rem;
+      background: var(--dark);
+      border-radius: 2px;
+    }
+
+    /* ═══════════════════════════════
+       PROJECT CARDS
+    ════════════════════════════════ */
+    .project {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 4rem;
+      align-items: center;
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--rule);
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .project:first-of-type { border-top: none; }
+    .project.visible { opacity: 1; transform: translateY(0); }
+
+    .project.flip { grid-template-columns: 1.1fr 1fr; }
+    .project.flip .project-media { order: -1; }
+
+    .project-index {
+      font-size: var(--fs-xs);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.5rem;
+    }
+    .project-title {
+      font-size: var(--fs-lg);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+    .project-desc {
+      font-size: var(--fs-sm);
+      color: #4a4a4a;
+      line-height: 1.85;
+      margin-bottom: 1.25rem;
+    }
+
+    /* proj-link — underline wipe style */
+    .proj-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--dark);
+      position: relative;
+      padding-bottom: 3px;
+    }
+    .proj-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%;
+      height: 1.5px;
+      background: var(--dark);
+      transform-origin: left;
+      transition: transform 0.35s cubic-bezier(0.77,0,0.18,1);
+    }
+    .proj-link:hover::after { transform: scaleX(0); transform-origin: right; }
+    .proj-link .arrow { transition: transform 0.3s ease; display: inline-block; }
+    .proj-link:hover .arrow { transform: translate(4px, -3px); }
+
+    /* proj-btn-row — flex row for multiple project buttons */
+    .proj-btn-row {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+
+    /* Test Curriculum — matches View Profile button hover */
+    .proj-link-curriculum {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: var(--fs-xs);
+      font-weight: 700;
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--dark);
+      background: transparent;
+      border: 1.5px solid var(--rule);
+      padding: 0.45rem 1rem;
+      position: relative;
+      overflow: hidden;
+      transition: color 0.35s ease, border-color 0.3s ease;
+      cursor: pointer;
+    }
+    .proj-link-curriculum::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--darker);
+      transform: translateX(-101%);
+      transition: transform 0.35s cubic-bezier(0.77,0,0.18,1);
+    }
+    .proj-link-curriculum:hover { color: var(--white); border-color: var(--darker); }
+    .proj-link-curriculum:hover::before { transform: translateX(0); }
+    .proj-link-curriculum span { position: relative; z-index: 1; }
+    .proj-link-curriculum svg { position: relative; z-index: 1; }
+
+    .project-media {
+      position: relative;
+      background: #f0f0f0;
+      overflow: hidden;
+      border-radius: 4px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+      transition: box-shadow 0.4s ease, transform 0.4s ease;
+    }
+    .project-media:hover {
+      box-shadow: 0 16px 48px rgba(0,0,0,0.15), 0 4px 16px rgba(0,0,0,0.08);
+      transform: translateY(-3px);
+    }
+
+    .media-video {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .project-media:hover .media-video { transform: scale(1.03); }
+
+    .screenshot-img {
+      width: 100%;
+      aspect-ratio: 16/10;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .project-media:hover .screenshot-img { transform: scale(1.03); }
+
+    /* ═══════════════════════════════
+       FOOTER
+    ════════════════════════════════ */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2.5rem 2.5rem;
+      max-width: 1020px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-name {
+      font-size: var(--fs-xs);
+      letter-spacing: var(--tracking-wider);
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--dark);
+    }
+    .footer-copy {
+      font-size: var(--fs-xs);
+      color: var(--mid);
+      letter-spacing: 0.05em;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 740px) {
+      .profile-inner { padding: 3.5rem 1.5rem; }
+      .works-nav { padding: 1rem 1.5rem; }
+      .projects-wrap { padding: 0 1.5rem 4rem; }
+      .header-top { gap: 1.5rem; }
+      .headshot-wrap { width: 88px; height: 88px; }
+      h1 { font-size: 2.2rem; }
+      .contact-row { gap: 1rem; }
+      .btn-row { flex-direction: column; align-items: flex-start; }
+      .project, .project.flip { grid-template-columns: 1fr; gap: 2rem; }
+      .project.flip .project-media { order: 0; }
+      footer { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════
+       SECTION 1: PROFILE
+  ════════════════════════════════ -->
+  <section class="section-profile" id="section-profile">
+    <div class="profile-inner">
+
+      <div class="header-top">
+        <div class="headshot-wrap">
+          <img src="assets/Headshot.jpg" alt="Kevin Tabora" />
+        </div>
+        <div class="header-name-block">
+          <p class="label">Portfolio</p>
+          <h1>Kevin Tabora</h1>
+          <p class="subtitle">Sr. Instructional Designer</p>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <a href="#" id="email-copy-btn" onclick="copyEmail(event)">kbtabora@gmail.com</a>
+        <div class="contact-sep"></div>
+        <a href="https://linkedin.com/in/kevintabora" target="_blank" rel="noopener">linkedin.com/in/kevintabora</a>
+      </div>
+
+      <p class="bio">
+        Senior instructional designer focused on curriculum strategy, AI-enabled learning, and data-driven improvement. I translate business needs into scalable learning solutions that improve training efficiency and learner performance.
+      </p>
+
+      <div class="btn-row">
+        <a class="cta-download" href="assets/Resume.pdf" download>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M7 1v8M4 6.5l3 3 3-3M2 11.5h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Download Resume</span>
+        </a>
+
+        <a class="cta-works" href="#" onclick="event.preventDefault();document.getElementById('section-works').scrollIntoView({behavior:'smooth'})">
+          <span>See Selected Works</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M7 2v10M2 9l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════
+       SECTION 2: SELECTED WORKS
+  ════════════════════════════════ -->
+  <section class="section-works" id="section-works">
+
+    <!-- Sticky nav bar -->
+    <div class="works-nav">
+      <span class="works-nav-label">Selected Works</span>
+      <a class="cta-profile" href="#" onclick="event.preventDefault();document.getElementById('section-profile').scrollIntoView({behavior:'smooth'})">
+        <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+          <path d="M7 12V2M2 5l5-5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>View Profile</span>
+      </a>
+    </div>
+
+    <div class="projects-wrap">
+
+      <!-- Project 1 — Video -->
+      <div class="project" data-observe>
+        <div class="project-copy">
+          <p class="project-index">01</p>
+          <h2 class="project-title">Customer Service Tone</h2>
+          <p class="project-desc">
+            Even when agents know the right words, their tone can still sound tired, flat, or sarcastic. This short video uses a relatable call scenario to teach three practical behaviors: smiling, matching tone to the situation, and speaking with confidence. It enables customer service representatives to sound more sincere and credible during difficult calls.
+          </p>
+          <p class="project-desc" style="font-size:0.8rem; color:#888; font-style:italic;">
+            Video &middot; Vyond
+          </p>
+        </div>
+        <div class="project-media">
+          <video id="tone-video" class="media-video" controls preload="none" poster="assets/Tone.png">
+            <source src="assets/Tone.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+      <!-- Project 2 — Rise Code Block -->
+      <div class="project flip" data-observe>
+        <div class="project-copy">
+          <p class="project-index">02</p>
+          <h2 class="project-title">Generate Code for Rise Using AI</h2>
+          <p class="project-desc">
+            Building custom interactions for Articulate Rise can take too long. This guide shows instructional designers how to use AI to generate interactive components for Rise with HTML, CSS, and JavaScript that follow brand standards. Designed as a reusable reference, it speeds up development without requiring Storyline for every advanced build.
+          </p>
+          <p class="project-desc" style="font-size:0.8rem; color:#888; font-style:italic;">
+            Guide &middot; Articulate Rise / AI
+          </p>
+          <a class="proj-link" href="https://risecodeblock.s3.ap-southeast-1.amazonaws.com/index.html#/" target="_blank" rel="noopener">
+            View Project <span class="arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H3M10 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+        <div class="project-media">
+          <img class="screenshot-img" src="assets/Code.jpg" alt="Generate Code for Rise Using AI" />
+        </div>
+      </div>
+
+      <!-- Project 3 — Storyline -->
+      <div class="project" data-observe>
+        <div class="project-copy">
+          <p class="project-index">03</p>
+          <h2 class="project-title">Dealing With Irate Customers</h2>
+          <p class="project-desc">
+            This module helps experienced call center agents handle frustrated customers with more consistency. Using guided discovery, optional review, and scenario-based practice, it teaches learners how to apply acknowledgement, empathy, and assurance statements in realistic conversations. The result is stronger de-escalation and better customer interactions.
+            <br><br><strong>Note:</strong> This is an unbranded rebuild created for an instructor-led Articulate Storyline walkthrough.
+          </p>
+          <p class="project-desc" style="font-size:0.8rem; color:#888; font-style:italic;">
+            E-Learning &middot; Articulate Storyline
+          </p>
+          <a class="proj-link" href="https://acknowledgeempathizeassure.s3.ap-southeast-1.amazonaws.com/story.html" target="_blank" rel="noopener">
+            View Project <span class="arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H3M10 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+        <div class="project-media">
+          <img class="screenshot-img" src="assets/AEA.jpg" alt="Acknowledge, Empathize and Assure" />
+        </div>
+      </div>
+
+      <!-- Project 4 — AI-Enabled Chat Simulation -->
+      <div class="project flip" data-observe>
+        <div class="project-copy">
+          <p class="project-index">04</p>
+          <h2 class="project-title">AI-Enabled Chat Simulation</h2>
+          <p class="project-desc">
+            Instructional designers often jump straight to solutions before fully understanding the performance problem. This simulation puts designers in a realistic stakeholder meeting where they must apply Cathy Moore's Action Mapping framework to uncover the real issue before proposing any intervention. It builds the habit of asking better questions, challenging training requests, and tying solutions to measurable business goals.
+          </p>
+          <p class="project-desc" style="font-size:0.8rem; color:#888; font-style:italic;">
+            Simulation &middot; Node.js / AI
+          </p>
+          <a class="proj-link" href="https://kevlovesdev.github.io/id-simulation/" target="_blank" rel="noopener">
+            View Project <span class="arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H3M10 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+        <div class="project-media">
+          <img class="screenshot-img" src="assets/Chat.jpg" alt="AI-Enabled Chat Simulation" />
+        </div>
+      </div>
+
+      <!-- Project 5 — Training Designer App -->
+      <div class="project" data-observe>
+        <div class="project-copy">
+          <p class="project-index">05</p>
+          <h2 class="project-title">Training Designer App</h2>
+          <p class="project-desc">
+            Evaluating a training design can be difficult when the structure is not easy to see. This app allows learning professionals and stakeholders to visualize the mix of activities, methods, and delivery choices in a learning solution. It supports better design decisions by making gaps and imbalances easier to spot early.
+          </p>
+          <p class="project-desc">
+            To try it, download the test curriculum and upload it to the app. For a walkthrough, open the app and go to <strong>File > Guide</strong>.
+          </p>
+          <p class="project-desc" style="font-size:0.8rem; color:#888; font-style:italic;">
+            App &middot; HTML / CSS / JavaScript
+          </p>
+          <div class="proj-btn-row">
+            <a class="proj-link" href="https://trainingdesignerapp.s3.ap-southeast-1.amazonaws.com/index.html" target="_blank" rel="noopener">
+              View Project <span class="arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H3M10 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </a>
+            <a class="proj-link-curriculum" href="assets/Communicate_Pro__Essential_Conversations__20260314_1410Z.xlsx" download>
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+                <path d="M7 1v8M4 6.5l3 3 3-3M2 11.5h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Test Curriculum</span>
+            </a>
+          </div>
+        </div>
+        <div class="project-media">
+          <img class="screenshot-img" src="assets/Designer.jpg" alt="Training Designer App" />
+        </div>
+      </div>
+
+    </div><!-- /projects-wrap -->
+
+    <footer>
+      <span class="footer-name">Kevin Tabora</span>
+      <span class="footer-copy">&copy; 2026 &nbsp;&mdash;&nbsp; All rights reserved</span>
+    </footer>
+
+  </section>
+
+<script>
+  // Scroll-reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('[data-observe]').forEach(el => observer.observe(el));
+
+  // Copy email — works on both HTTP (S3) and HTTPS
+  function copyEmail(e) {
+    e.preventDefault();
+    const email = 'kbtabora@gmail.com';
+    const showToast = () => {
+      const toast = document.getElementById('email-toast');
+      if (!toast) return;
+      toast.classList.add('show');
+      clearTimeout(toast._t);
+      toast._t = setTimeout(() => toast.classList.remove('show'), 2500);
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(email).then(showToast);
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = email;
+      ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none;';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast();
+    }
+  }
+</script>
+</body>
+</html>
