@@ -9,9 +9,9 @@
   --bg:              #FAF8F4;
   --white:           #FFFFFF;
   --cream:           #EDE4D8;
-  --text:            #1C1C1E;
-  --muted:           #6B6868;
-  --text-secondary:  #4a4a4a;
+  --text:            #0F1E38;
+  --muted:           #5E6878;
+  --text-secondary:  #3D4A5C;
   --meta:            #888888;
   --nav-label:       rgba(28,28,30,0.45);
   --media-bg:        #E8E2D8;
@@ -294,12 +294,6 @@ h1 {
 .section-works {
   background: var(--white);
 }
-.section-works::before {
-  content: '';
-  display: block;
-  height: 3px;
-  background: var(--orange);
-}
 
 /* Sticky top nav bar */
 .works-nav {
@@ -309,6 +303,7 @@ h1 {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-top: 3px solid var(--orange);
   border-bottom: 1px solid var(--rule);
   padding: 1rem 2.5rem;
   display: flex;
@@ -359,7 +354,7 @@ h1 {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(28,28,30,0.07);
+  background: rgba(15,30,56,0.07);
   transform: translateX(-101%);
   transition: transform 0.35s cubic-bezier(0.77,0,0.18,1);
 }
