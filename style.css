@@ -466,6 +466,46 @@ footer {
   letter-spacing: 0.05em;
 }
 
+
+/* ═══════════════════════════════
+   EMAIL COPIED TOAST
+════════════════════════════════ */
+#email-toast {
+  position: fixed;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--darker);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-left: 3px solid var(--white);
+  color: var(--white);
+  font-family: var(--font);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+  white-space: nowrap;
+}
+#email-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+#email-toast .toast-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--white);
+  flex-shrink: 0;
+}
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: translateY(0); }
