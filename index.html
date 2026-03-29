@@ -23,41 +23,44 @@
   <section class="section-profile" id="section-profile">
     <div class="profile-inner">
 
-      <div class="header-top">
+      <!-- LEFT: Text Content -->
+      <div class="profile-content">
+        <p class="label">Portfolio</p>
+        <h1>Kevin Tabora</h1>
+        <p class="subtitle">Sr. Instructional Designer</p>
+
+        <p class="bio-lead">My goal is simple: help people do their jobs confidently.</p>
+        <p class="bio">I work with organizations to identify performance gaps and build learning experiences with measurable results.</p>
+
+        <div class="contact-row">
+          <a href="#" id="email-copy-btn" onclick="copyEmail(event)">kbtabora@gmail.com</a>
+          <div class="contact-sep"></div>
+          <a href="https://linkedin.com/in/kevintabora" target="_blank" rel="noopener">linkedin.com/in/kevintabora</a>
+        </div>
+
+        <div class="btn-row">
+          <a class="cta-download" href="assets/Resume.pdf" download>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M7 1v8M4 6.5l3 3 3-3M2 11.5h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Resume</span>
+          </a>
+
+          <a class="cta-works" href="#" onclick="event.preventDefault();document.getElementById('section-works').scrollIntoView({behavior:'smooth'})">
+            <span>See Works</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+              <path d="M7 2v10M2 9l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Photo -->
+      <div class="profile-visual">
+        <div class="visual-deco"></div>
         <div class="headshot-wrap">
-          <img src="assets/Headshot.jpg" alt="Kevin Tabora" />
+          <img src="assets/profile.jpg" alt="Kevin Tabora" />
         </div>
-        <div class="header-name-block">
-          <p class="label">Portfolio</p>
-          <h1>Kevin Tabora</h1>
-          <p class="subtitle">Sr. Instructional Designer</p>
-        </div>
-      </div>
-
-      <div class="contact-row">
-        <a href="#" id="email-copy-btn" onclick="copyEmail(event)">kbtabora@gmail.com</a>
-        <div class="contact-sep"></div>
-        <a href="https://linkedin.com/in/kevintabora" target="_blank" rel="noopener">linkedin.com/in/kevintabora</a>
-      </div>
-
-      <p class="bio">
-        My goal is simple: help people do their jobs competently and confidently. I work with organizations to identify performance gaps and build learning experiences with measurable results.
-      </p>
-
-      <div class="btn-row">
-        <a class="cta-download" href="assets/Resume.pdf" download>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M7 1v8M4 6.5l3 3 3-3M2 11.5h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span>Download Resume</span>
-        </a>
-
-        <a class="cta-works" href="#" onclick="event.preventDefault();document.getElementById('section-works').scrollIntoView({behavior:'smooth'})">
-          <span>See Selected Works</span>
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M7 2v10M2 9l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
       </div>
 
     </div>
@@ -113,7 +116,7 @@
             Guide &middot; Articulate Rise / AI
           </p>
           <a class="proj-link" href="https://kevintabora.github.io/risecodeblock/" target="_blank" rel="noopener">
-            View Project <span class="arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H3M10 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>View Project</span> <span class="arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H3M10 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
         </div>
         <div class="project-media">
@@ -134,7 +137,7 @@
             E-Learning &middot; Articulate Storyline
           </p>
           <a class="proj-link" href="https://kevintabora.github.io/iratecustomers/" target="_blank" rel="noopener">
-            View Project <span class="arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H3M10 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>View Project</span> <span class="arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H3M10 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
         </div>
         <div class="project-media">
@@ -154,7 +157,7 @@
             Simulation &middot; Node.js / AI
           </p>
           <a class="proj-link" href="https://kevintabora.github.io/id-simulation/" target="_blank" rel="noopener">
-            View Project <span class="arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H3M10 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <span>View Project</span> <span class="arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H3M10 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
         </div>
         <div class="project-media">
@@ -178,7 +181,7 @@
           </p>
           <div class="proj-btn-row">
             <a class="proj-link" href="https://kevintabora.github.io/trainingdesigner/" target="_blank" rel="noopener">
-              View Project <span class="arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H3M10 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <span>View Project</span> <span class="arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H3M10 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </a>
             <a class="proj-link-curriculum" href="assets/Communicate_Pro__Essential_Conversations__20260314_1410Z.xlsx" download>
               <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
