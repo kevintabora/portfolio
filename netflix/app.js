@@ -1,7 +1,7 @@
 // Copy email — works on both HTTP (S3) and HTTPS
 function copyEmail(e) {
   e.preventDefault();
-  const email = 'kbtabora@gmail.com';
+  const email = 'kbtabora+portfolio@gmail.com';
   const showToast = () => {
     const toast = document.getElementById('email-toast');
     toast.classList.add('show');
