@@ -231,6 +231,9 @@ h1 {
   flex-wrap: wrap;
 }
 .contact-row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-size: var(--fs-xs);
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -239,15 +242,20 @@ h1 {
   transition: color 0.2s;
 }
 .contact-row a:hover { color: var(--nf-white); }
-.contact-sep {
-  width: 1px;
-  height: 12px;
-  background: var(--nf-rule);
-  flex-shrink: 0;
+
+.bio-lead {
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--nf-white);
+  max-width: 640px;
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+  text-wrap: pretty;
 }
 
+
 .bio {
-  font-size: var(--fs-base);
+  font-size: var(--fs-sm);
   font-weight: 400;
   color: var(--nf-gray-lt);
   max-width: 580px;
