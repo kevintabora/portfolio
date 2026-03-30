@@ -3,15 +3,16 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --orange:          #D05A1E;
-  --orange-dark:     #B84D18;
-  --orange-light:    rgba(208, 90, 30, 0.12);
+  --orange:          #F05F20;
+  --orange-dark:     #D45018;
+  --orange-light:    rgba(240, 95, 32, 0.12);
   --bg:              #FAF8F4;
   --white:           #FFFFFF;
   --cream:           #EDE4D8;
-  --text:            #0F1E38;
+  --text:            #112244;
+  --text-body:       #1A1A1A;
   --muted:           #5E6878;
-  --text-secondary:  #3D4A5C;
+  --text-secondary:  #2A2A2A;
   --meta:            #888888;
   --nav-label:       rgba(28,28,30,0.45);
   --media-bg:        #E8E2D8;
@@ -31,7 +32,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: var(--font);
   background: var(--bg);
-  color: var(--text);
+  color: var(--text-body);
   font-size: var(--fs-base);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
@@ -122,7 +123,7 @@ h1 {
 .bio-lead {
   font-size: var(--fs-sm);
   font-weight: 600;
-  color: var(--text);
+  color: var(--text-body);
   line-height: 1.65;
   margin-bottom: 0.65rem;
 }
@@ -135,7 +136,7 @@ h1 {
 }
 
 .highlight {
-  background: rgba(208, 90, 30, 0.13);
+  background: rgba(240, 95, 32, 0.13);
   color: inherit;
   padding: 0.05em 0.25em;
   border-radius: 3px;
@@ -190,7 +191,7 @@ h1 {
   cursor: pointer;
   border: none;
   white-space: nowrap;
-  box-shadow: 0 4px 14px rgba(208, 90, 30, 0.35);
+  box-shadow: 0 4px 14px rgba(240, 95, 32, 0.35);
 }
 .cta-download::before {
   content: '';
