@@ -3,13 +3,13 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --orange:          #F05F20;
-  --orange-dark:     #D45018;
-  --orange-light:    rgba(240, 95, 32, 0.12);
+  --orange:          #FC6A03;
+  --orange-dark:     #E05E02;
+  --orange-light:    rgba(252, 106, 3, 0.12);
   --bg:              #FAF8F4;
   --white:           #FFFFFF;
   --cream:           #EDE4D8;
-  --text:            #112244;
+  --text:            #0C2340;
   --text-body:       #1A1A1A;
   --muted:           #5E6878;
   --text-secondary:  #2A2A2A;
@@ -136,7 +136,7 @@ h1 {
 }
 
 .highlight {
-  background: rgba(240, 95, 32, 0.13);
+  background: rgba(252, 106, 3, 0.13);
   color: inherit;
   padding: 0.05em 0.25em;
   border-radius: 3px;
@@ -191,7 +191,7 @@ h1 {
   cursor: pointer;
   border: none;
   white-space: nowrap;
-  box-shadow: 0 4px 14px rgba(240, 95, 32, 0.35);
+  box-shadow: 0 4px 14px rgba(252, 106, 3, 0.35);
 }
 .cta-download::before {
   content: '';
