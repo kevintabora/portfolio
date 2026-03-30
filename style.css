@@ -234,7 +234,6 @@ h1 {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  margin-bottom: 1.75rem;
 }
 .profile-name-block {
   display: flex;
@@ -576,6 +575,23 @@ footer {
   transition: color 0.25s;
 }
 .footer-name:hover { color: var(--orange); }
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.25s;
+}
+.footer-links a:hover { color: var(--orange); }
+
 .footer-copy {
   font-size: var(--fs-xs);
   color: var(--muted);
@@ -642,7 +658,7 @@ footer {
   .profile-content { max-width: 100%; }
   h1 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
   .subtitle { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-  .profile-header { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule); }
+  .profile-header { border-bottom: 1px solid var(--rule); padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
 }
 
 @media (max-width: 740px) {
