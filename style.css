@@ -123,7 +123,7 @@ h1 {
 .bio-lead {
   font-size: var(--fs-sm);
   font-weight: 600;
-  color: var(--text-body);
+  color: var(--text);
   line-height: 1.65;
   margin-bottom: 0.65rem;
 }
