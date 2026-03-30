@@ -26,15 +26,7 @@
   --tracking-wider: 0.2em;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
-}
-
-.section-profile,
-.section-works {
-  scroll-snap-align: start;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font);
@@ -178,6 +170,11 @@ h1 {
   gap: 1rem;
   flex-wrap: wrap;
 }
+.btn-row .cta-download,
+.btn-row .cta-works {
+  flex: 1;
+  justify-content: center;
+}
 
 /* Download Resume — orange primary */
 .cta-download {
@@ -232,8 +229,33 @@ h1 {
 }
 .cta-works:hover { background: var(--orange-light); }
 
-/* RIGHT: Visual */
+/* Profile header row (photo + name block side by side) */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+}
+.profile-name-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+/* Small photo inside header row — hidden on desktop */
 .profile-visual {
+  display: none;
+  flex-shrink: 0;
+}
+.profile-visual .headshot-wrap {
+  width: 80px;
+  max-width: 80px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+.profile-visual .visual-deco { display: none; }
+
+/* RIGHT: Large desktop photo column */
+.profile-visual-desktop {
   position: relative;
   display: flex;
   justify-content: center;
@@ -611,22 +633,16 @@ footer {
 @media (max-width: 900px) {
   .profile-inner {
     grid-template-columns: 1fr;
-    gap: 3rem;
-    padding: 4rem 2rem;
+    gap: 0;
+    padding: 3rem 1.75rem;
+    align-items: start;
   }
-  .profile-visual {
-    order: -1;
-    max-height: 400px;
-  }
-  .headshot-wrap {
-    max-width: 280px;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    margin: 0 auto;
-  }
-  .visual-deco { display: none; }
-  .profile-visual::before, .profile-visual::after { display: none; }
-  h1 { font-size: clamp(2.8rem, 8vw, 3.5rem); }
+  .profile-visual-desktop { display: none; }
+  .profile-visual { display: flex; }
+  .profile-content { max-width: 100%; }
+  h1 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+  .subtitle { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+  .profile-header { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule); }
 }
 
 @media (max-width: 740px) {
