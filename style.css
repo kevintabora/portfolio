@@ -43,13 +43,22 @@ body {
 }
 
 .profile-inner {
-  max-width: 645px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  max-width: 1120px;
   margin: 0 auto;
   padding: 5rem 2.5rem;
   animation: fadeUp 0.9s ease both;
 }
 
-.header-top {
+.profile-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-header {
   display: flex;
   align-items: center;
   gap: 2.25rem;
@@ -72,6 +81,29 @@ body {
   transition: transform 0.5s ease;
 }
 .headshot-wrap:hover img { transform: scale(1.05); }
+
+/* Mobile headshot: hidden on desktop, shown on mobile */
+.profile-visual-mobile {
+  display: none;
+  flex-shrink: 0;
+}
+.profile-visual-mobile .headshot-wrap {
+  width: 80px;
+  height: 80px;
+}
+
+/* Desktop headshot column */
+.profile-visual-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-visual-desktop .headshot-wrap {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
 
 .header-name-block { display: flex; flex-direction: column; gap: 0.3rem; }
 
@@ -106,6 +138,9 @@ h1 {
   flex-wrap: wrap;
 }
 .contact-row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   font-size: var(--fs-xs);
   letter-spacing: 0.05em;
   color: var(--off-white);
@@ -114,11 +149,19 @@ h1 {
   transition: color 0.25s, border-color 0.25s;
 }
 .contact-row a:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
-.contact-sep {
-  width: 1px;
-  height: 12px;
-  background: rgba(255,255,255,0.2);
-  flex-shrink: 0;
+
+.bio-lead {
+  font-size: var(--fs-base);
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
+  line-height: 1.8;
+  margin-bottom: 0.75rem;
+}
+
+.highlight {
+  background: rgba(255,255,255,0.12);
+  border-radius: 3px;
+  padding: 0.1em 0.2em;
 }
 
 .bio {
@@ -512,11 +555,13 @@ footer {
 }
 
 @media (max-width: 740px) {
-  .profile-inner { padding: 3.5rem 1.5rem; }
+  .profile-inner { grid-template-columns: 1fr; gap: 2rem; padding: 3.5rem 1.5rem; }
+  .profile-visual-mobile { display: flex; }
+  .profile-visual-desktop { display: none; }
+  .profile-visual-mobile .headshot-wrap { width: 80px; height: 80px; }
+  .profile-header { gap: 1.5rem; }
   .works-nav { padding: 1rem 1.5rem; }
   .projects-wrap { padding: 0 1.5rem 4rem; }
-  .header-top { gap: 1.5rem; }
-  .headshot-wrap { width: 88px; height: 88px; }
   h1 { font-size: 2.2rem; }
   .contact-row { gap: 1rem; }
   .btn-row { flex-direction: column; align-items: flex-start; }
