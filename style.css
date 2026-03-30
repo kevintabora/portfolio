@@ -4,9 +4,10 @@
 
 :root {
   --dark: #1e1e1e;
-  --darker: #121212;
+  --darker: #141414;
   --white: #ffffff;
-  --off-white: rgba(255,255,255,0.55);
+  --text-white: #F0F4F8;
+  --off-white: rgba(240,244,248,0.55);
   --mid: #888888;
   --rule: #e0e0e0;
   --fs-xs: 0.72rem;
@@ -70,7 +71,7 @@ body {
   height: 112px;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7), 0 6px 20px rgba(0,0,0,0.4);
   flex-shrink: 0;
 }
 .headshot-wrap img {
@@ -119,7 +120,7 @@ h1 {
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.0;
-  color: var(--white);
+  color: var(--text-white);
 }
 
 .subtitle {
@@ -152,7 +153,7 @@ h1 {
 
 .bio-lead {
   font-size: var(--fs-base);
-  color: rgba(255,255,255,0.9);
+  color: var(--text-white);
   font-weight: 600;
   line-height: 1.8;
   margin-bottom: 0.75rem;
