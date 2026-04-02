@@ -53,7 +53,7 @@ body {
 
 .profile-inner {
   width: 100%;
-  max-width: 1210px;
+  max-width: 1160px;
   margin: 0 auto;
   padding: 6rem 3rem;
   display: grid;
@@ -294,7 +294,6 @@ h1 {
   border-radius: 50%;
   overflow: hidden;
   background: #F1F5F9;
-  border: 1px solid rgba(0, 0, 0, 0.08);
   box-shadow:
     0 28px 80px rgba(0, 0, 0, 0.18),
     0 8px 24px rgba(0, 0, 0, 0.10);
