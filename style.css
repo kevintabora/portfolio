@@ -274,9 +274,8 @@ h1 {
   overflow: hidden;
   background: var(--surface);
   box-shadow:
-    0 0 0 1px rgba(252, 106, 3, 0.20),
-    0 20px 60px rgba(0, 0, 0, 0.10),
-    0 4px 16px rgba(0, 0, 0, 0.06);
+    0 28px 80px rgba(0, 0, 0, 0.18),
+    0 8px 24px rgba(0, 0, 0, 0.10);
 }
 .headshot-wrap img {
   width: 100%;
