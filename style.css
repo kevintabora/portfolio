@@ -57,7 +57,7 @@ body {
   padding: 6rem 3rem;
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: 4rem;
+  gap: 2.5rem;
   align-items: center;
   animation: fadeUp 0.8s var(--ease) both;
 }
@@ -65,7 +65,7 @@ body {
 .profile-content {
   display: flex;
   flex-direction: column;
-  max-width: 560px;
+  max-width: 460px;
 }
 
 /* Label */
