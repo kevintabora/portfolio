@@ -3,9 +3,9 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --orange:       #F97316;
-  --orange-dark:  #EA6C00;
-  --orange-glow:  rgba(249, 115, 22, 0.10);
+  --orange:       #FF5C00;
+  --orange-dark:  #E05000;
+  --orange-glow:  rgba(255, 92, 0, 0.10);
 
   --bg:           #F7F8F3;
   --white:        #FFFFFF;
@@ -150,7 +150,7 @@ h1 {
 }
 
 .highlight {
-  background: rgba(249, 115, 22, 0.11);
+  background: rgba(255, 92, 0, 0.11);
   color: inherit;
   padding: 0.05em 0.22em;
   border-radius: 3px;
@@ -203,7 +203,7 @@ h1 {
   overflow: hidden;
   cursor: pointer;
   white-space: nowrap;
-  box-shadow: 0 2px 12px rgba(249, 115, 22, 0.30);
+  box-shadow: 0 2px 12px rgba(255, 92, 0, 0.30);
   transition: box-shadow 0.25s var(--ease), color 0.3s var(--ease);
 }
 .cta-download::before {
@@ -214,7 +214,7 @@ h1 {
   transform: translateX(-101%);
   transition: transform 0.35s cubic-bezier(0.77, 0, 0.18, 1);
 }
-.cta-download:hover { color: #fff; box-shadow: 0 4px 18px rgba(249, 115, 22, 0.40); }
+.cta-download:hover { color: #fff; box-shadow: 0 4px 18px rgba(255, 92, 0, 0.40); }
 .cta-download:hover::before { transform: translateX(0); }
 .cta-download span, .cta-download svg { position: relative; z-index: 1; }
 
