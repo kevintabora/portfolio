@@ -29,7 +29,7 @@
   --fs-base: 1rem;
   --fs-lg: 1.5rem;
   --fs-2xl: 3.5rem;
-  --font: 'Enterprise Sans', 'Proxima Nova', 'proxima-nova', 'Nunito Sans', 'Gill Sans MT', 'Gill Sans', sans-serif;
+  --font: 'Proxima Nova', 'proxima-nova', 'Nunito Sans', 'Gill Sans MT', 'Gill Sans', sans-serif;
   --tracking-wide: 0;
   --tracking-wider: 0;
 }
@@ -235,19 +235,23 @@ h1 {
   padding: 0.75rem 1.5rem;
   position: relative;
   overflow: hidden;
-  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  transition: color 0.35s ease, border-color 0.35s ease;
   cursor: pointer;
   border: 1.5px solid var(--warm-gray);
 }
 .cta-download::before {
-  display: none;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gray-100);
+  transform: translateX(-101%);
+  transition: transform 0.35s cubic-bezier(0.77,0,0.18,1);
 }
 .cta-download:hover {
   color: var(--white);
-  background: var(--gray-100);
   border-color: var(--gray-100);
 }
-.cta-download:hover::before { transform: none; }
+.cta-download:hover::before { transform: translateX(0); }
 .cta-download span { position: relative; z-index: 1; }
 .cta-download svg { position: relative; z-index: 1; }
 
@@ -267,18 +271,22 @@ h1 {
   padding: 0.75rem 1.5rem;
   position: relative;
   overflow: hidden;
-  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  transition: color 0.35s ease, border-color 0.35s ease;
   cursor: pointer;
 }
 .cta-works::before {
-  display: none;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--horizon);
+  transform: translateX(-101%);
+  transition: transform 0.35s cubic-bezier(0.77,0,0.18,1);
 }
 .cta-works:hover {
   color: var(--warm-gray);
-  background: var(--horizon);
   border-color: var(--warm-gray);
 }
-.cta-works:hover::before { transform: none; }
+.cta-works:hover::before { transform: translateX(0); }
 .cta-works span { position: relative; z-index: 1; }
 .cta-works svg { position: relative; z-index: 1; }
 
@@ -305,11 +313,22 @@ h1 {
   max-width: 100%;
 }
 .works-nav-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
   font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  color: var(--dark-orange);
+  color: var(--warm-gray);
+}
+.works-nav-label::before {
+  content: '';
+  width: 3px;
+  height: 1rem;
+  background: var(--optum-orange);
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 
 /* View Profile — small ghost button in nav */
@@ -328,17 +347,19 @@ h1 {
   padding: 0.5rem 1.1rem;
   position: relative;
   overflow: hidden;
-  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  transition: color 0.35s ease, border-color 0.35s ease;
   cursor: pointer;
 }
 .cta-profile::before {
-  display: none;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--warm-gray);
+  transform: translateX(-101%);
+  transition: transform 0.35s cubic-bezier(0.77,0,0.18,1);
 }
 .cta-profile:hover { color: var(--white); border-color: var(--warm-gray); }
-.cta-profile:hover {
-  background: var(--warm-gray);
-}
-.cta-profile:hover::before { transform: none; }
+.cta-profile:hover::before { transform: translateX(0); }
 .cta-profile span { position: relative; z-index: 1; }
 .cta-profile svg { position: relative; z-index: 1; }
 
