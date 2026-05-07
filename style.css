@@ -124,11 +124,21 @@ body {
 .header-name-block { display: flex; flex-direction: column; gap: 0.3rem; }
 
 .label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
   font-size: var(--fs-xs);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
   color: var(--dark-orange);
   font-weight: 800;
+}
+.label::before {
+  content: '';
+  width: 2.4rem;
+  height: 2px;
+  background: var(--optum-orange);
+  flex-shrink: 0;
 }
 
 h1 {
@@ -140,12 +150,23 @@ h1 {
 }
 
 .subtitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   font-size: var(--fs-xs);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
   color: var(--gray-80);
   margin-top: 0.2rem;
   font-weight: 700;
+}
+.subtitle::before {
+  content: '';
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--optum-orange);
+  flex-shrink: 0;
 }
 
 .contact-row {
