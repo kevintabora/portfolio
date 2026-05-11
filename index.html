@@ -6,6 +6,7 @@
   <title>Kevin Tabora</title>
   <link rel="icon" type="image/png" sizes="32x32" href="KT icon.png" />
   <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 <body>
 
@@ -105,10 +106,51 @@
 
     <div class="projects-wrap">
 
-      <!-- Project 1 — Video -->
+      <!-- Project 1 - Case Study -->
       <div class="project" data-observe>
         <div class="project-copy">
           <p class="project-index">01</p>
+          <h2 class="project-title">Communication capability program</h2>
+          <p class="project-desc">
+            A customer support organization relied on a costly third-party communication skills program that was not fully tailored to internal metrics, job expectations, or real customer scenarios. I developed an in-house blended program that taught practical communication behaviors through role-specific examples and scenario-based practice. I also helped drive adoption through leader roadshows, campaign materials, train-the-trainer sessions, and rollout support for agents, supervisors, and recruiters.
+          </p>
+          <p class="project-meta">
+            Case study &middot; Blended learning / Change adoption
+          </p>
+          <button class="proj-link case-study-trigger" type="button" data-case-modal-open>
+            View case study <span class="arrow"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M1 10L10 1M10 1H3M10 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+        </div>
+        <div class="project-media">
+          <div class="case-stats-grid">
+            <div class="case-stat">
+              <i class="case-stat-icon" data-lucide="dollar-sign" aria-hidden="true"></i>
+              <span class="case-stat-value">$200K</span>
+              <span class="case-stat-label">Estimated annual savings</span>
+            </div>
+            <div class="case-stat">
+              <i class="case-stat-icon" data-lucide="refresh-cw" aria-hidden="true"></i>
+              <span class="case-stat-value">In-house</span>
+              <span class="case-stat-label">Vendor program replaced</span>
+            </div>
+            <div class="case-stat">
+              <i class="case-stat-icon" data-lucide="layers" aria-hidden="true"></i>
+              <span class="case-stat-value">Blended</span>
+              <span class="case-stat-label">Training and adoption support</span>
+            </div>
+            <div class="case-stat">
+              <i class="case-stat-icon" data-lucide="network" aria-hidden="true"></i>
+              <span class="case-stat-value">Enterprise</span>
+              <span class="case-stat-label">Rollout across learner groups</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 - Video -->
+      <div class="project flip" data-observe>
+        <div class="project-copy">
+          <p class="project-index">02</p>
           <h2 class="project-title">Customer service tone</h2>
           <p class="project-desc">
             Even when agents know the right words, their tone can still sound tired, flat, or sarcastic. This short video uses a relatable call scenario to teach three practical behaviors: smiling, matching tone to the situation, and speaking with confidence. It enables customer service representatives to sound more sincere and credible during difficult calls.
@@ -125,10 +167,10 @@
         </div>
       </div>
 
-      <!-- Project 2 — Rise Code Block -->
-      <div class="project flip" data-observe>
+      <!-- Project 3 - Rise Code Block -->
+      <div class="project" data-observe>
         <div class="project-copy">
-          <p class="project-index">02</p>
+          <p class="project-index">03</p>
           <h2 class="project-title">Generate code for Rise using AI</h2>
           <p class="project-desc">
             Building custom interactions for Articulate Rise can take too long. This guide shows instructional designers how to use AI to generate interactive components for Rise with HTML, CSS, and JavaScript that follow brand standards. Designed as a reusable reference, it speeds up development without requiring Storyline for every advanced build.
@@ -145,10 +187,10 @@
         </div>
       </div>
 
-      <!-- Project 3 — Storyline -->
-      <div class="project" data-observe>
+      <!-- Project 4 - Storyline -->
+      <div class="project flip" data-observe>
         <div class="project-copy">
-          <p class="project-index">03</p>
+          <p class="project-index">04</p>
           <h2 class="project-title">Dealing with irate customers</h2>
           <p class="project-desc">
             This module helps experienced call center agents handle frustrated customers with more consistency. Using guided discovery, optional review, and scenario-based practice, it teaches learners how to apply acknowledgement, empathy, and assurance statements in realistic conversations. The result is stronger de-escalation and better customer interactions.
@@ -166,10 +208,10 @@
         </div>
       </div>
 
-      <!-- Project 4 — AI-Enabled Chat Simulation -->
-      <div class="project flip" data-observe>
+      <!-- Project 5 - AI-Enabled Chat Simulation -->
+      <div class="project" data-observe>
         <div class="project-copy">
-          <p class="project-index">04</p>
+          <p class="project-index">05</p>
           <h2 class="project-title">AI-enabled chat simulation</h2>
           <p class="project-desc">
             Instructional designers often jump straight to solutions before fully understanding the performance problem. This simulation puts designers in a realistic stakeholder meeting where they must apply Cathy Moore's Action Mapping framework to uncover the real issue before proposing any intervention. It builds the habit of asking better questions, challenging training requests, and tying solutions to measurable business goals.
@@ -186,10 +228,10 @@
         </div>
       </div>
 
-      <!-- Project 5 — Training Designer App -->
-      <div class="project" data-observe>
+      <!-- Project 6 - Training Designer App -->
+      <div class="project flip" data-observe>
         <div class="project-copy">
-          <p class="project-index">05</p>
+          <p class="project-index">06</p>
           <h2 class="project-title">Training designer app</h2>
           <p class="project-desc">
             Evaluating a training design can be difficult when the structure is not easy to see. This app allows learning professionals and stakeholders to visualize the mix of activities, methods, and delivery choices in a learning solution. It supports better design decisions by making gaps and imbalances easier to spot early.
@@ -225,6 +267,95 @@
     </footer>
 
   </section>
+
+  <div class="case-modal-overlay" data-case-modal-overlay hidden>
+    <div class="case-modal" role="dialog" aria-modal="true" aria-labelledby="case-modal-title">
+      <div class="case-modal-header">
+        <div>
+          <h2 id="case-modal-title">Customer communication capability program</h2>
+          <p>An anonymized case study on replacing a vendor-provided communication skills program with an in-house blended learning initiative.</p>
+        </div>
+        <button class="case-modal-close" type="button" aria-label="Close case study" data-case-modal-close>
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="case-modal-body">
+        <div class="case-impact-grid" aria-label="Quick impact">
+          <span>$200K estimated annual savings</span>
+          <span>Vendor program replaced</span>
+          <span>Enterprise rollout support</span>
+          <span>Blended communication training</span>
+        </div>
+
+        <section class="case-section">
+          <h3>Business problem</h3>
+          <p>The organization relied on a third-party communication skills program that carried significant licensing costs and was not fully tailored to internal performance expectations, customer scenarios, or operational metrics. The challenge was not only to build a replacement program, but to create something leaders, trainers, and operational teams would adopt.</p>
+        </section>
+
+        <section class="case-section">
+          <h3>My role</h3>
+          <ul>
+            <li>Led needs and task analysis to define job-specific communication requirements</li>
+            <li>Designed the blended learning structure and scenario-based practice</li>
+            <li>Aligned content with existing performance metrics and business expectations</li>
+            <li>Developed internal materials to replace vendor-provided content</li>
+            <li>Supported leadership buy-in through roadshow-style presentations</li>
+            <li>Created adoption support through campaign materials, videos, and trainer enablement</li>
+            <li>Supported rollout to agents, supervisors, and recruiters</li>
+          </ul>
+        </section>
+
+        <section class="case-section">
+          <h3>Solution approach</h3>
+          <div class="case-card-grid">
+            <div class="case-approach-card">
+              <h4>Analyze</h4>
+              <p>Identified communication behaviors, task requirements, and performance expectations.</p>
+            </div>
+            <div class="case-approach-card">
+              <h4>Design</h4>
+              <p>Built an in-house blended program using realistic workplace scenarios.</p>
+            </div>
+            <div class="case-approach-card">
+              <h4>Campaign</h4>
+              <p>Supported adoption through leader roadshows, emails, videos, and stakeholder alignment.</p>
+            </div>
+            <div class="case-approach-card">
+              <h4>Scale</h4>
+              <p>Enabled trainers and operational teams to roll out the program across learner groups.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="case-section">
+          <h3>Adoption strategy</h3>
+          <ol class="case-timeline">
+            <li>Align with business metrics</li>
+            <li>Secure leadership buy-in</li>
+            <li>Launch awareness campaign</li>
+            <li>Enable trainers</li>
+            <li>Roll out to learner groups</li>
+            <li>Embed into training and process expectations</li>
+          </ol>
+        </section>
+
+        <section class="case-section">
+          <h3>Impact</h3>
+          <p>Estimated $200K USD annual savings by replacing external licensing with an internal communication skills program.</p>
+          <ul>
+            <li>Reduced dependency on vendor-provided training</li>
+            <li>Improved alignment between communication training and operational needs</li>
+            <li>Created reusable internal training assets</li>
+            <li>Supported consistent communication standards across teams</li>
+            <li>Strengthened trainer and leader ownership of the program</li>
+          </ul>
+        </section>
+
+        <p class="case-note">This case study is an anonymized summary. Proprietary names, visuals, materials, and internal data have been removed or generalized.</p>
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>
