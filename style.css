@@ -749,6 +749,10 @@ body.case-modal-open {
   margin-top: 0.28rem;
 }
 
+.case-impact-mobile-text {
+  display: none;
+}
+
 .case-section {
   border-top: 1px solid var(--horizon);
   padding-top: 1.65rem;
@@ -949,11 +953,35 @@ footer {
   .case-modal-header h2 { font-size: 1.35rem; }
   .case-modal-header p { font-size: 0.86rem; }
   .case-modal-body { padding: 1.25rem; }
-  .case-impact-card { min-height: 6.75rem; }
   .case-impact-grid,
   .case-card-grid,
   .case-timeline {
     grid-template-columns: 1fr;
+  }
+  .case-impact-grid {
+    gap: 0.7rem;
+  }
+  .case-impact-card {
+    min-height: auto;
+    display: block;
+    border: 0;
+    border-left: 3px solid var(--optum-orange);
+    border-radius: 0;
+    background: var(--warm-white);
+    box-shadow: none;
+    padding: 0.85rem 0.95rem;
+  }
+  .case-impact-icon,
+  .case-impact-value,
+  .case-impact-label {
+    display: none;
+  }
+  .case-impact-mobile-text {
+    display: block;
+    color: var(--warm-gray);
+    font-size: 0.88rem;
+    font-weight: 800;
+    line-height: 1.45;
   }
   footer { padding: 2rem 1.5rem; }
 }
