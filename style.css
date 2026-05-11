@@ -666,9 +666,23 @@ body.case-modal-open {
 
 .case-modal-header h2 {
   color: var(--warm-gray);
-  font-size: 1.75rem;
-  line-height: 1.15;
-  margin-bottom: 0.55rem;
+  font-size: var(--fs-lg);
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin-bottom: 0.7rem;
+}
+
+.case-modal-header h2::before {
+  content: 'Case study';
+  display: block;
+  color: var(--dark-orange);
+  font-size: var(--fs-xs);
+  font-weight: 800;
+  letter-spacing: var(--tracking-wider);
+  line-height: 1.4;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
 }
 
 .case-modal-header p {
@@ -706,6 +720,10 @@ body.case-modal-open {
 
 .case-modal-body {
   padding: 2rem;
+}
+
+.case-mobile-summary {
+  display: none;
 }
 
 .case-impact-grid {
@@ -950,9 +968,19 @@ footer {
     padding: 1.25rem;
     gap: 1rem;
   }
-  .case-modal-header h2 { font-size: 1.35rem; }
-  .case-modal-header p { font-size: 0.86rem; }
+  .case-modal-header h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
+  .case-modal-header p { display: none; }
   .case-modal-body { padding: 1.25rem; }
+  .case-mobile-summary {
+    display: block;
+    color: var(--gray-80);
+    font-size: 0.86rem;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
   .case-impact-grid,
   .case-card-grid,
   .case-timeline {
