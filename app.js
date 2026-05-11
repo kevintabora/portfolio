@@ -9,16 +9,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 document.querySelectorAll('[data-observe]').forEach(el => observer.observe(el));
 
-const refreshIcons = () => {
-  if (window.lucide && typeof window.lucide.createIcons === 'function') {
-    window.lucide.createIcons();
-  }
-};
-
-refreshIcons();
-document.addEventListener('DOMContentLoaded', refreshIcons);
-window.addEventListener('load', refreshIcons);
-
 // Case study modal
 const caseModalOverlay = document.querySelector('[data-case-modal-overlay]');
 const caseModal = caseModalOverlay?.querySelector('.case-modal');
@@ -31,7 +21,6 @@ const openCaseModal = () => {
   caseModalLastFocus = document.activeElement;
   caseModalOverlay.hidden = false;
   document.body.classList.add('case-modal-open');
-  refreshIcons();
   caseModalClose?.focus();
 };
 
