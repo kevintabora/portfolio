@@ -359,10 +359,13 @@ h1 {
   transform: translateX(-101%);
   transition: transform 0.35s cubic-bezier(0.77,0,0.18,1);
 }
-.cta-profile:hover { color: var(--white); border-color: var(--warm-gray); }
-.cta-profile:hover::before { transform: translateX(0); }
 .cta-profile span { position: relative; z-index: 1; }
 .cta-profile svg { position: relative; z-index: 1; }
+
+@media (hover: hover) and (pointer: fine) {
+  .cta-profile:hover { color: var(--white); border-color: var(--warm-gray); }
+  .cta-profile:hover::before { transform: translateX(0); }
+}
 
 .projects-wrap {
   max-width: 1120px;
