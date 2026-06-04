@@ -197,6 +197,17 @@ h1 span {
   -webkit-box-decoration-break: clone;
 }
 
+@media (max-width: 1080px) and (min-width: 741px) {
+  .subtitle {
+    max-width: 430px;
+    white-space: normal;
+  }
+  .subtitle .tagline-line {
+    display: inline;
+    white-space: normal;
+  }
+}
+
 .contact-row {
   display: flex;
   align-items: center;
