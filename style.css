@@ -167,23 +167,24 @@ h1 {
   max-width: 720px;
 }
 h1 span {
-  color: var(--dark-orange);
+  color: var(--optum-orange);
 }
 
 .subtitle {
   display: block;
-  max-width: 560px;
-  font-size: clamp(1.08rem, 1.4vw, 1.35rem);
+  max-width: 650px;
+  font-size: clamp(0.98rem, 1.18vw, 1.12rem);
   letter-spacing: 0;
   text-transform: none;
   color: var(--gray-80);
   margin-top: 0;
   font-weight: 600;
   line-height: 1.55;
+  white-space: nowrap;
 }
 .subtitle span {
   color: var(--warm-gray);
-  background: linear-gradient(transparent 62%, var(--dawn-orange) 62%);
+  background: linear-gradient(transparent 68%, rgba(249,166,103,0.45) 68%);
   padding: 0 0.08em;
 }
 
@@ -194,6 +195,7 @@ h1 span {
   margin-bottom: 2rem;
   flex-wrap: wrap;
 }
+.contact-row:not(:has(a:not([hidden]))) { display: none; }
 .contact-row a {
   display: inline-flex;
   align-items: center;
@@ -999,6 +1001,7 @@ footer {
     max-width: 20rem;
     font-size: 1.05rem;
     line-height: 1.55;
+    white-space: normal;
   }
   .contact-row { gap: 1rem; }
   .btn-row { flex-direction: column; align-items: flex-start; }
