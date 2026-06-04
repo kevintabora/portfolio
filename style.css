@@ -183,10 +183,18 @@ h1 span {
   line-height: 1.55;
   white-space: nowrap;
 }
-.subtitle span {
+.subtitle .tagline-line {
+  display: block;
+  white-space: nowrap;
+}
+.subtitle .highlight {
+  display: inline;
   color: var(--warm-gray);
-  background: linear-gradient(transparent 68%, rgba(249,166,103,0.45) 68%);
-  padding: 0 0.08em;
+  background: rgba(249,166,103,0.32);
+  border-radius: 3px;
+  padding: 0.03em 0.12em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 .contact-row {
@@ -980,8 +988,8 @@ footer {
   .profile-inner {
     grid-template-columns: 1fr;
     gap: 2rem;
-    width: auto;
-    padding: 4rem 1.5rem;
+    width: 100%;
+    padding: 4rem 1rem;
   }
   .profile-visual-mobile { display: flex; }
   .profile-visual-desktop { display: none; }
@@ -997,6 +1005,10 @@ footer {
     gap: 1.35rem;
     margin-bottom: 1.5rem;
   }
+  .profile-content {
+    width: min(100%, 20.625rem);
+    justify-self: center;
+  }
   .works-nav { padding: 1rem 1.5rem; }
   .projects-wrap { padding: 0 1.5rem 4rem; }
   h1 {
@@ -1007,8 +1019,9 @@ footer {
   }
   h1 br { display: none; }
   .subtitle {
-    max-width: 20rem;
-    font-size: var(--fs-base);
+    max-width: 100%;
+    font-size: var(--fs-sm);
+    font-weight: 600;
     line-height: 1.65;
     white-space: normal;
   }
