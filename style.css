@@ -190,6 +190,7 @@ h1 span {
 .subtitle .highlight {
   display: inline;
   color: var(--warm-gray);
+  font-weight: 700;
   background: rgba(249,166,103,0.32);
   border-radius: 3px;
   padding: 0.03em 0.12em;
